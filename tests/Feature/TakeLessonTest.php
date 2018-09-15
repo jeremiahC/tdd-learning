@@ -51,10 +51,13 @@ class TakeLessonTest extends TestCase
         $response->assertStatus(201);
     }
 
-    /**@test */
-    public function user_can_get_number_of_lessons_learned ()
+    /** @test */
+    public function user_can_get_number_of_lessons_learned()
     {
         $user = $this->userCreate();
-        
+
+        $response = $this->get('/');
+
+        $response->assertStatus(200);
     }
 }
